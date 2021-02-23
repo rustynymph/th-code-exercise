@@ -4,20 +4,20 @@ body {
 
 #container {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
 }
   
 .card {
-  flex: 0 0 calc(30% - 30px);
+  flex: 0 0 30%;
   border-radius: 5px;
   background: white;
-  margin: 30px;
+  margin: 15px; /* for creating 30px gutters */
   font-family: Helvetica, sans-serif;
   box-shadow: 0px 1px 2px #c6ccd2;
 }
 
-.card-header {
+.card .card-header {
   position: relative;
 }
 
@@ -25,7 +25,7 @@ body {
   opacity: 1;
 }
 
-.overlay {
+.card .overlay {
   position: absolute;
   bottom: 3px;
   background: rgb(0, 0, 0);
@@ -42,19 +42,18 @@ body {
   text-align: right;
 }
 
-
 .card img {
   border-radius: 5px 5px 0px 0px;
   max-width: 100%;
 }
 
-.card .info {
-  padding: 5px 20px;
+.card .card-footer {
+  padding: 5px 0px 10px 12px;
 }
 
-img.avatar {
-  width: 30px;
-  float: left;
+.card .card-footer .post-info {
+  display: inline-block;
+  padding-left: 10px;
 }
 
 .card hr {
@@ -63,6 +62,7 @@ img.avatar {
 
 .card .title {
   padding: 5px 20px;
+  min-height: 72px;
 }
 
 .card .title h2{
@@ -70,43 +70,73 @@ img.avatar {
   font-size: 16px; 
 }
 
-.card .name {
+.card h3.name {
   color: #384047;
   font-size: 12px;
+  padding: 0;
+  margin: 0;
 }
 
-.card .date {
+.card h4.date {
   color: #8d9aa5;
   font-size: 12px;
+  padding: 0;
+  margin: 0;
 }
 
-* {
-  box-sizing: border-box;
+img.avatar {
+  width: 30px;
+  float: left;
+}
+
+.card .card-footer .post-avatar {
+  float: left;
 }
 
 .fas {
   color: white;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @media (max-width: 480px) {
-  .flex-container {
-    flex-direction: column;
-  }
-  
   .card {
-    width: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+  .card .title h2{
+    font-size: 14px; 
+  }
+  .card h3.name {
+    font-size: 10px;
+  }
+  .card h4.date {
+    font-size: 10px;
+  }
+  #container {
+    flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
   .card {
-    flex: 0 0 calc(50% - 30px);
+    flex: 100%;
+    max-width: 100%;
+    margin: 15px 0px 15px 0px;
+  }
+  #container {
+    flex-direction: column;
+  }
+  .card .title {
+    min-height: 50px;
   }
 }
 
 @media (max-width: 1024px) {
   .card {
-    width: 40%;
-  }  
+    flex: 0 0 45%;
+  }
 }
 
