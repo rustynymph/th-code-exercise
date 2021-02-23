@@ -74,6 +74,7 @@ body {
 .card h3.name {
   color: #384047;
   font-size: 12px;
+  font-weight: 400;
   padding: 0;
   margin: 0;
 }
@@ -81,11 +82,12 @@ body {
 .card h4.date {
   color: #8d9aa5;
   font-size: 12px;
+  font-weight: 400;
   padding: 0;
   margin: 0;
 }
 
-img.avatar {
+.card img.avatar {
   width: 30px;
   float: left;
 }
@@ -127,11 +129,11 @@ img.avatar {
     max-width: 100%;
     margin: 15px 0px 15px 0px;
   }
-  #container {
-    flex-direction: column;
-  }
   .card .title {
     min-height: 50px;
+  }
+  #container {
+    flex-direction: column;
   }
 }
 
